@@ -25,6 +25,12 @@ async function main() {
 
   // Lancement planifié : on vérifie l'heure de Paris et l'absence de doublon.
   if (flag("scheduled") && !flag("force")) {
+    // Tant que les secrets Telegram ne sont pas configurés, le cron ne fait rien
+    // (plutôt qu'échouer chaque matin).
+    if (flag("send") && !(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID)) {
+      console.log("Rien à faire : TELEGRAM_BOT_TOKEN et TELEGRAM_CHAT_ID ne sont pas encore configurés.");
+      return;
+    }
     const decision = scheduleDecision(now, briefExists(today));
     if (!decision.run) {
       console.log(`Rien à faire : ${decision.reason}.`);
