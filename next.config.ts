@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  // Les pages et le webhook Telegram lisent les briefs et la watchlist depuis
+  // le dépôt : ces fichiers doivent accompagner les fonctions déployées.
+  outputFileTracingIncludes: {
+    "/**": ["./data/**/*.json", "./config/*.json"],
+  },
   turbopack: {
     rules: {
       "*.css": {
