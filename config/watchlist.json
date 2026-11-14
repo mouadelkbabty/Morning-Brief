@@ -1,0 +1,30 @@
+{
+  "markets": [
+    { "id": "cac40", "name": "CAC 40", "symbol": "PX1", "kind": "index", "currency": "pts",
+      "sources": [{ "provider": "stooq", "symbol": "^cac" }] },
+    { "id": "sp500", "name": "S&P 500", "symbol": "SPX", "kind": "index", "currency": "pts",
+      "sources": [{ "provider": "stooq", "symbol": "^spx" }, { "provider": "twelvedata", "symbol": "SPY" }] },
+    { "id": "nasdaq100", "name": "Nasdaq 100", "symbol": "NDX", "kind": "index", "currency": "pts",
+      "sources": [{ "provider": "stooq", "symbol": "^ndx" }, { "provider": "twelvedata", "symbol": "QQQ" }] },
+    { "id": "msciworld", "name": "MSCI World", "symbol": "URTH", "kind": "index", "currency": "USD",
+      "note": "Suivi via l'ETF iShares MSCI World (URTH) : l'indice lui-même n'a pas de flux gratuit.",
+      "sources": [{ "provider": "stooq", "symbol": "urth.us" }, { "provider": "twelvedata", "symbol": "URTH" }, { "provider": "alphavantage", "symbol": "URTH" }] }
+  ],
+  "positions": [
+    { "id": "pea-monde", "name": "Amundi PEA Monde (MSCI World)", "symbol": "DCAM", "kind": "etf", "currency": "EUR",
+      "sources": [{ "provider": "twelvedata", "symbol": "DCAM", "mic": "XPAR" }, { "provider": "alphavantage", "symbol": "DCAM.PAR" }, { "provider": "stooq", "symbol": "dcam.fr" }] },
+    { "id": "pea-sp500", "name": "Amundi PEA S&P 500 (Acc)", "symbol": "PE500", "kind": "etf", "currency": "EUR",
+      "sources": [{ "provider": "twelvedata", "symbol": "PE500", "mic": "XPAR" }, { "provider": "alphavantage", "symbol": "PE500.PAR" }, { "provider": "stooq", "symbol": "pe500.fr" }] },
+    { "id": "pea-nasdaq", "name": "Amundi PEA Nasdaq-100", "symbol": "PUST", "kind": "etf", "currency": "EUR",
+      "sources": [{ "provider": "twelvedata", "symbol": "PUST", "mic": "XPAR" }, { "provider": "alphavantage", "symbol": "PUST.PAR" }, { "provider": "stooq", "symbol": "pust.fr" }] },
+    { "id": "nvda", "name": "NVIDIA", "symbol": "NVDA", "kind": "stock", "currency": "USD",
+      "sources": [{ "provider": "stooq", "symbol": "nvda.us" }, { "provider": "twelvedata", "symbol": "NVDA" }, { "provider": "finnhub", "symbol": "NVDA" }] },
+    { "id": "meta", "name": "Meta", "symbol": "META", "kind": "stock", "currency": "USD",
+      "sources": [{ "provider": "stooq", "symbol": "meta.us" }, { "provider": "twelvedata", "symbol": "META" }, { "provider": "finnhub", "symbol": "META" }] }
+  ],
+  "earnings": {
+    "NVDA": "NVIDIA", "META": "Meta", "AAPL": "Apple", "MSFT": "Microsoft", "GOOGL": "Alphabet",
+    "AMZN": "Amazon", "TSLA": "Tesla", "AVGO": "Broadcom", "AMD": "AMD", "TSM": "TSMC",
+    "ASML": "ASML", "NFLX": "Netflix", "ORCL": "Oracle", "JPM": "JPMorgan"
+  }
+}

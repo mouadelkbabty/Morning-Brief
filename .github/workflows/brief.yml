@@ -1,0 +1,72 @@
+name: Morning Brief
+
+on:
+  schedule:
+    # GitHub planifie en UTC. 05:50 UTC = 7h50 à Paris en été, 06:50 UTC = 7h50
+    # en hiver. Le script vérifie l'heure de Paris : un seul des deux génère le
+    # brief, puis attend 8h00 pile pour l'envoyer.
+    - cron: "50 5 * * 1-5"
+    - cron: "50 6 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      send:
+        description: "Envoyer sur Telegram"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: morning-brief
+  cancel-in-progress: false
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Générer et envoyer le brief
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+          ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL }}
+          OPENROUTER_MODELS: ${{ vars.OPENROUTER_MODELS }}
+          APP_URL: ${{ vars.APP_URL }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            npx tsx scripts/brief.ts --scheduled --save --send --wait
+          elif [ "${{ inputs.send }}" = "true" ]; then
+            npx tsx scripts/brief.ts --force --save --send
+          else
+            npx tsx scripts/brief.ts --force --save
+          fi
+
+      # Le commit du fichier JSON déclenche le redéploiement de la web app.
+      - name: Enregistrer le brief dans le dépôt
+        if: always()
+        run: |
+          git add data/briefs
+          if git diff --cached --quiet; then
+            echo "Aucun nouveau brief à enregistrer."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Brief du $(TZ=Europe/Paris date +%F)"
+          git pull --rebase --quiet
+          git push

@@ -1,0 +1,258 @@
+{
+  "version": 1,
+  "date": "2026-11-13",
+  "generatedAt": "2026-11-13T07:00:00.000Z",
+  "summary": [
+    "Séance positive hier à Wall Street, tirée par les valeurs technologiques.",
+    "La banque centrale laisse ses taux inchangés, sans surprise pour les marchés.",
+    "L'inflation en zone euro ralentit plus que prévu.",
+    "La demande en puces pour l'IA reste le moteur du secteur."
+  ],
+  "markets": [
+    {
+      "id": "cac40",
+      "name": "CAC 40",
+      "symbol": "PX1",
+      "kind": "index",
+      "currency": "pts",
+      "status": "ok",
+      "price": 8123.96,
+      "changePct": 0.64,
+      "change5dPct": 1.61,
+      "closes": [
+        7995.6,
+        8056.85,
+        8107.98,
+        8026.74,
+        8072.14,
+        8123.96
+      ],
+      "asOf": "2026-11-12",
+      "provider": "stooq"
+    },
+    {
+      "id": "sp500",
+      "name": "S&P 500",
+      "symbol": "SPX",
+      "kind": "index",
+      "currency": "pts",
+      "status": "ok",
+      "price": 7096.86,
+      "changePct": 0.99,
+      "change5dPct": 1.74,
+      "closes": [
+        6975.22,
+        6993.5,
+        7045.17,
+        7017.74,
+        7027.31,
+        7096.86
+      ],
+      "asOf": "2026-11-12",
+      "provider": "stooq"
+    },
+    {
+      "id": "nasdaq100",
+      "name": "Nasdaq 100",
+      "symbol": "NDX",
+      "kind": "index",
+      "currency": "pts",
+      "status": "ok",
+      "price": 25316.31,
+      "changePct": 0.22,
+      "change5dPct": -1.28,
+      "closes": [
+        25643.34,
+        25630.39,
+        25503.09,
+        25320.84,
+        25260.5,
+        25316.31
+      ],
+      "asOf": "2026-11-12",
+      "provider": "stooq"
+    },
+    {
+      "id": "msciworld",
+      "name": "MSCI World",
+      "symbol": "URTH",
+      "kind": "index",
+      "currency": "USD",
+      "status": "ok",
+      "price": 187.69,
+      "changePct": -0.98,
+      "change5dPct": 0.72,
+      "closes": [
+        186.35,
+        187.12,
+        186.79,
+        187.67,
+        189.54,
+        187.69
+      ],
+      "asOf": "2026-11-12",
+      "provider": "stooq",
+      "note": "Suivi via l'ETF iShares MSCI World (URTH) : l'indice lui-même n'a pas de flux gratuit."
+    }
+  ],
+  "positions": [
+    {
+      "id": "pea-monde",
+      "name": "Amundi PEA Monde (MSCI World)",
+      "symbol": "DCAM",
+      "kind": "etf",
+      "currency": "EUR",
+      "status": "ok",
+      "price": 5.74,
+      "changePct": -1.03,
+      "change5dPct": -0.86,
+      "closes": [
+        5.79,
+        5.75,
+        5.72,
+        5.75,
+        5.8,
+        5.74
+      ],
+      "asOf": "2026-11-12",
+      "provider": "twelvedata"
+    },
+    {
+      "id": "pea-sp500",
+      "name": "Amundi PEA S&P 500 (Acc)",
+      "symbol": "PE500",
+      "kind": "etf",
+      "currency": "EUR",
+      "status": "ok",
+      "price": 50.05,
+      "changePct": 0.02,
+      "change5dPct": -0.58,
+      "closes": [
+        50.34,
+        50.06,
+        50.59,
+        50.26,
+        50.04,
+        50.05
+      ],
+      "asOf": "2026-11-12",
+      "provider": "twelvedata"
+    },
+    {
+      "id": "pea-nasdaq",
+      "name": "Amundi PEA Nasdaq-100",
+      "symbol": "PUST",
+      "kind": "etf",
+      "currency": "EUR",
+      "status": "ok",
+      "price": 97.4,
+      "changePct": 1.04,
+      "change5dPct": -0.17,
+      "closes": [
+        97.57,
+        97.08,
+        96.56,
+        95.84,
+        96.4,
+        97.4
+      ],
+      "asOf": "2026-11-12",
+      "provider": "twelvedata"
+    },
+    {
+      "id": "nvda",
+      "name": "NVIDIA",
+      "symbol": "NVDA",
+      "kind": "stock",
+      "currency": "USD",
+      "status": "ok",
+      "price": 194.74,
+      "changePct": -0.22,
+      "change5dPct": 1.6,
+      "closes": [
+        191.68,
+        191.84,
+        193.06,
+        193.47,
+        195.16,
+        194.74
+      ],
+      "asOf": "2026-11-12",
+      "provider": "stooq"
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "symbol": "META",
+      "kind": "stock",
+      "currency": "USD",
+      "status": "ok",
+      "price": 733.28,
+      "changePct": 0.36,
+      "change5dPct": 1.56,
+      "closes": [
+        722.01,
+        725.14,
+        723.76,
+        731.27,
+        730.64,
+        733.28
+      ],
+      "asOf": "2026-11-12",
+      "provider": "stooq"
+    }
+  ],
+  "news": [
+    {
+      "summary": "Le gouverneur s'exprime aujourd'hui à 15h, les marchés attendent des indices sur la suite.",
+      "title": "Discours du gouverneur attendu aujourd'hui à 15h",
+      "source": "Banque centrale (exemple)",
+      "url": "https://rss.example.com/a/discours",
+      "category": "taux",
+      "publishedAt": "2026-11-13T04:00:00.000Z"
+    },
+    {
+      "summary": "Un géant des réseaux sociaux va nettement augmenter ses dépenses d'infrastructure IA.",
+      "title": "Un géant des réseaux sociaux augmente ses investissements dans l'IA",
+      "source": "Tech Hebdo (exemple)",
+      "url": "https://rss.example.com/a/capex",
+      "category": "tech/IA",
+      "publishedAt": "2026-11-13T01:00:00.000Z"
+    },
+    {
+      "summary": "Wall Street enchaîne une troisième séance de hausse grâce aux valeurs technologiques.",
+      "title": "Wall Street termine en hausse, portée par la tech",
+      "source": "Éco Matin (exemple)",
+      "url": "https://rss.example.com/a/wall-street-bis",
+      "category": "macro",
+      "publishedAt": "2026-11-12T23:00:00.000Z"
+    },
+    {
+      "summary": "Un fabricant de puces relève ses prévisions, porté par la demande des centres de données IA.",
+      "title": "Un fabricant de puces relève ses prévisions grâce à la demande en IA",
+      "source": "Tech Hebdo (exemple)",
+      "url": "https://rss.example.com/a/puces",
+      "category": "tech/IA",
+      "publishedAt": "2026-11-12T20:00:00.000Z"
+    }
+  ],
+  "watch": [
+    {
+      "label": "Résultats de NVIDIA (après la clôture de Wall Street)",
+      "kind": "earnings"
+    },
+    {
+      "label": "Discours du gouverneur de la banque centrale à 15h",
+      "kind": "central_bank"
+    }
+  ],
+  "disclaimer": "Information générale, pas un conseil en investissement.",
+  "meta": {
+    "ai": {
+      "provider": "gemini",
+      "model": "gemini-flash-latest"
+    },
+    "degraded": []
+  },
+  "sample": true
+}

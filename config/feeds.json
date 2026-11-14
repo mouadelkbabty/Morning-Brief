@@ -1,0 +1,12 @@
+{
+  "maxAgeHours": 36,
+  "feeds": [
+    { "name": "BCE", "url": "https://www.ecb.europa.eu/rss/press.html", "category": "taux" },
+    { "name": "Réserve fédérale", "url": "https://www.federalreserve.gov/feeds/press_all.xml", "category": "taux" },
+    { "name": "Les Echos", "url": "https://services.lesechos.fr/rss/les-echos-finance-marches.xml", "category": "marchés" },
+    { "name": "Le Monde", "url": "https://www.lemonde.fr/economie/rss_une.xml", "category": "macro" },
+    { "name": "CNBC", "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html", "category": "marchés" },
+    { "name": "BBC", "url": "https://feeds.bbci.co.uk/news/business/rss.xml", "category": "macro" },
+    { "name": "TechCrunch", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "tech/IA" }
+  ]
+}

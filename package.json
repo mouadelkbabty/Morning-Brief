@@ -1,0 +1,46 @@
+{
+  "name": "morning-brief",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "brief": "tsx scripts/brief.ts",
+    "brief:demo": "tsx scripts/brief.ts --fixtures",
+    "brief:send": "tsx scripts/brief.ts --send --save --force",
+    "brief:sample": "tsx scripts/brief.ts --fixtures --sample",
+    "check:sources": "tsx scripts/check-sources.ts",
+    "telegram:webhook": "tsx scripts/telegram-webhook.ts"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "fast-xml-parser": "^5.12.1",
+    "geist": "^1.9.2",
+    "lucide-react": "^1.72.0",
+    "motion": "^14.14.0",
+    "next": "16.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "simple-icons": "^16.37.0",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "tailwindcss": "4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.1.0"
+  },
+  "description": "Brief bourse quotidien : Telegram à 8h + web app installable."
+}
